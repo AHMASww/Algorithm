@@ -4,6 +4,7 @@ def heapSort(nums):
     length = len(nums)
     count = length
     # 初始化最大堆
+    # 从第一个非叶子节点开始
     for i in range((length-2) // 2, -1, -1):
         initHeap(nums, length, i)
     # 将nums[0]和nums[count-1]两个元素交换，长度减1，即将最大元素下沉到合适位置，再次重新初始化最大堆
@@ -11,6 +12,7 @@ def heapSort(nums):
     while count > 1:
         nums[0], nums[count - 1] = nums[count - 1], nums[0]
         count -= 1
+        # 从第一个非叶子节点开始
         for i in range((count - 2) // 2, - 1, -1):
             initHeap(nums, count, i)
 
